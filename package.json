@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "servor --reload",
+    "sass": "sass main.scss main.css --watch"
+  },
+  "dependencies": {
+    "sass": "^1.86.3",
+    "servor": "^4.0.2"
+  }
+}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="container">
+    <header>
+      <div class="logo">MinhaLogo</div>
+
+      <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Transações</a>
+        <a href="#">Orçamentos</a>
+        <a href="#">Simuladores</a>
+        <a href="#">Investimentos</a>
+        <a href="#">Importar</a>
+        <a href="#">Relatórios</a>
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn-plus" type="button" title="Acesso rápido">
+          <i class="bi bi-plus"></i>
+        </button>
+        <div class="btn-group">
+          <button class="icon-btn" type="button" title="Notificações">
+            <i class="bi bi-bell"></i>
+          </button>
+          <button class="icon-btn" type="button" title="Acesso rápido">
+            <i class="bi bi-info-circle"></i>
+          </button>
+        </div>
+
+        <div class="avatar" onclick="toggleDropdown()">
+          <img src=https://ui-avatars.com/api/?name=Igor+Senario" alt="Perfil"
+          />
+        </div>
+
+        <div class="dropdown" id="dropdown">
+          <a href="#">Meu Perfil</a>
+          <a href="#">Configurações</a>
+          <a href="#">Sair</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="parent">
+        <div class="div1">
+          <div class="tag">
+            <div class="icon-title">
+              <span class="icon">
+                <i class="bi bi-arrow-up-right-circle"></i>
+              </span>
+              <div class="title">Saldo Atual</div>
+            </div>
+            <div class="percent">+23%</div>
+          </div>
+          <div class="value">4.150,00</div>
+        </div>
+        <div class="div2">
+          <div class="tag">
+            <div class="icon-title">
+              <span class="icon">
+                <i class="bi bi-arrow-up-right-circle"></i>
+              </span>
+              <div class="title">Receita</div>
+            </div>
+            <div class="percent">+15%</div>
+          </div>
+          <div class="value">8.500,00</div>
+        </div>
+        <div class="div3">
+          <div class="tag">
+            <div class="icon-title">
+              <span class="icon">
+                <i class="bi bi-arrow-up-right-circle"></i>
+              </span>
+              <div class="title">Despesa</div>
+            </div>
+            <div class="percent">+4%</div>
+          </div>
+          <div class="value">6.200,00</div>
+        </div>
+        <div class="div4">
+          <div class="tag">
+            <div class="icon-title">
+              <span class="icon">
+                <i class="bi bi-arrow-up-right-circle"></i>
+              </span>
+              <div class="title">Tendência de Renda</div>
+            </div>
+          </div>
+        </div>
+        <div class="div5">
+          <div class="tag">
+            <div class="icon-title">
+              <span class="icon">
+                <i class="bi bi-arrow-up-right-circle"></i>
+              </span>
+              <div class="title">Recentes</div>
+            </div>
+            <a href="#" class="all">Ver tudo</a>
+          </div>
+          <div class="transactions-view">
+            <div class="transaction-box">
+              <span class="transaction-icon"
+                ><i class="bi bi-arrow-down-right"></i
+              ></span>
+              <div class="transaction-data">
+                <a class="item" href="">Cinema</a>
+                <div class="transaction-category">
+                  <a class="date" href="">18/03/2025</a>
+                  <a class="category" href="">Entretenimento</a>
+                </div>
+              </div>
+            </div>
+            <a class="transaction-value" href="">-60,00</a>
+          </div>
+          <div class="transactions-view">
+            <div class="transaction-box">
+              <span class="transaction-icon"
+                ><i class="bi bi-arrow-down-right"></i
+              ></span>
+              <div class="transaction-data">
+                <a class="item" href="">Cinema</a>
+                <div class="transaction-category">
+                  <a class="date" href="">18/03/2025</a>
+                  <a class="category" href="">Entretenimento</a>
+                </div>
+              </div>
+            </div>
+            <a class="transaction-value" href="">-60,00</a>
+          </div>
+          <div class="transactions-view">
+            <div class="transaction-box">
+              <span class="transaction-icon"
+                ><i class="bi bi-arrow-down-right"></i
+              ></span>
+              <div class="transaction-data">
+                <a class="item" href="">Cinema</a>
+                <div class="transaction-category">
+                  <a class="date" href="">18/03/2025</a>
+                  <a class="category" href="">Entretenimento</a>
+                </div>
+              </div>
+            </div>
+            <a class="transaction-value" href="">-60,00</a>
+          </div>
+          <div class="transactions-view">
+            <div class="transaction-box">
+              <span class="transaction-icon"
+                ><i class="bi bi-arrow-down-right"></i
+              ></span>
+              <div class="transaction-data">
+                <a class="item" href="">Cinema</a>
+                <div class="transaction-category">
+                  <a class="date" href="">18/03/2025</a>
+                  <a class="category" href="">Entretenimento</a>
+                </div>
+              </div>
+            </div>
+            <a class="transaction-value" href="">-60,00</a>
+          </div>
+          <div class="transactions-view">
+            <div class="transaction-box">
+              <span class="transaction-icon"
+                ><i class="bi bi-arrow-down-right"></i
+              ></span>
+              <div class="transaction-data">
+                <a class="item" href="">Cinema</a>
+                <div class="transaction-category">
+                  <a class="date" href="">18/03/2025</a>
+                  <a class="category" href="">Entretenimento</a>
+                </div>
+              </div>
+            </div>
+            <a class="transaction-value" href="">-60,00</a>
+          </div>
+        </div>
+        <div class="div6">
+          <div class="tag">
+            <div class="icon-title">
+              <span class="icon">
+                <i class="bi bi-arrow-up-right-circle"></i>
+              </span>
+              <div class="title">Divisão de Despesas</div>
+            </div>
+          </div>
+        </div>
+        <div class="div7">
+          <div class="card-economy">
+            <div class="tag">
+              <div class="icon-title">
+                <span class="icon">
+                  <i class="bi bi-arrow-up-right-circle"></i>
+                </span>
+                <div class="title">Meta de Economia</div>
+              </div>
+              <div class="percent">64%</div>
+            </div>
+            <div class="tag-budget">R$ 3200 de 5000</div>
+            <div class="bar-progress">
+              <progress value="64" max="100"></progress>
+            </div>
+            <div class="tag-info">
+              <p>Atingirá a meta em 3 meses se mantiver o ritmo atual.</p>
+            </div>
+          </div>
+          <div class="card-trick">
+            <div class="tag">
+              <div class="icon-title">
+                <span class="icon">
+                  <i class="bi bi-arrow-up-right-circle"></i>
+                </span>
+                <div class="title">Dica do Dia</div>
+              </div>
+            </div>
+            <p class="message-trick">
+              “Seu gasto com lazer aumentou <span>18%</span> neste mês. Que tal
+              revisar e ver se está dentro do planejado?”
+            </p>
+          </div>
+          <div class="card-expense-fixed">
+            <div class="card-table"></div>
+          </div>
+          <div class="card-numbers-month"></div>
+          <div class="card-pro"></div>
+        </div>
+        <div class="div8">
+          <nav class="filter-group">
+            <select id="periodo" onchange="toggleDatasPersonalizadas()">
+              <option value="" disabled selected>Selecione o período</option>
+              <option value="diario">Diário</option>
+              <option value="mensal">Mensal</option>
+              <option value="anual">Anual</option>
+              <option value="personalizado">Personalizado</option>
+            </select>
+
+            <div id="datasPersonalizadas" style="display: none">
+              <label for="dataInicio">De:</label>
+              <input type="date" id="dataInicio" />
+              <label for="dataFim">Até:</label>
+              <input type="date" id="dataFim" />
+            </div>
+
+            <br />
+
+            <select id="usuario">
+              <option value="" disabled selected>Usuário</option>
+              <option value="todos">Todos os usuários</option>
+              <option value="usuario1">Usuário 1</option>
+              <option value="usuario2">Usuário 2</option>
+              <!-- Pode preencher dinamicamente com JS depois -->
+            </select>
+
+            <br /><br />
+
+            <button onclick="aplicarFiltro()">Aplicar Filtro</button>
+          </nav>
+        </div>
+        <div class="div9">
+          <div class="tag">
+            <div class="icon-title">
+              <span class="icon">
+                <i class="bi bi-arrow-up-right-circle"></i>
+              </span>
+              <div class="title">Visão Geral do Orçamento</div>
+            </div>
+          </div>
+          <div class="budget-view">
+            <div class="tag">
+              <div class="icon-title">
+                <div class="title">Moradia</div>
+              </div>
+              <div class="percent">64%</div>
+            </div>
+            <div class="tag-budget">R$ 3200 de 5000</div>
+            <progress value="64" max="100"></progress>
+            <div class="tag-info">
+              <p></p>
+            </div>
+          </div>
+          <div class="budget-view">
+            <div class="tag">
+              <div class="icon-title">
+                <div class="title">Moradia</div>
+              </div>
+              <div class="percent">64%</div>
+            </div>
+            <div class="tag-budget">R$ 3200 de 5000</div>
+            <progress value="64" max="100"></progress>
+            <div class="tag-info">
+              <p></p>
+            </div>
+          </div>
+          <div class="budget-view">
+            <div class="tag">
+              <div class="icon-title">
+                <div class="title">Moradia</div>
+              </div>
+              <div class="percent">64%</div>
+            </div>
+            <div class="tag-budget">R$ 3200 de 5000</div>
+            <progress value="64" max="100"></progress>
+            <div class="tag-info">
+              <p></p>
+            </div>
+          </div>
+          <div class="budget-view">
+            <div class="tag">
+              <div class="icon-title">
+                <div class="title">Moradia</div>
+              </div>
+              <div class="percent">64%</div>
+            </div>
+            <div class="tag-budget">R$ 3200 de 5000</div>
+            <progress value="64" max="100"></progress>
+            <div class="tag-info">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
