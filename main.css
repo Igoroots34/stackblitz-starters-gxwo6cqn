@@ -565,21 +565,35 @@ header nav a:hover {
   width: auto;
   height: auto;
   border-radius: 34px;
-  padding: 9px;
+  padding: 6px;
 }
 .div8 .filter-group {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
 }
 .div8 .filter-group #periodo {
-  display: flex;
-  padding: 3px;
-  border-radius: 16px;
+  padding: 3px 12px;
+  border-radius: 32px;
+  border: none;
+  background-color: #3a3a3a;
+  color: #d9d9d9;
+}
+.div8 .filter-group #usuario {
+  padding: 3px 12px;
+  border-radius: 32px;
   align-items: center;
   border: none;
   background-color: #3a3a3a;
   color: #d9d9d9;
+}
+.div8 .filter-group button {
+  padding: 3px 12px;
+  border-radius: 32px;
+  border: none;
+  background-color: #e9d362;
+  color: #242424;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
 .div9 {
