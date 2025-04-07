@@ -35,9 +35,13 @@ header nav a {
   text-decoration: none;
   color: #686868;
   font-weight: 500;
+  transition: all 100ms ease-in-out;
 }
 header nav a:hover {
   color: #d9d9d9;
+}
+header nav a:active {
+  color: #000;
 }
 
 .actions {
@@ -569,31 +573,89 @@ header nav a:hover {
 }
 .div8 .filter-group {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-content: center;
 }
-.div8 .filter-group #periodo {
-  padding: 3px 12px;
-  border-radius: 32px;
-  border: none;
-  background-color: #3a3a3a;
+.div8 .filter-group .filter-btn-group {
+  display: flex;
+  gap: 16px;
+}
+.div8 .filter-group .filter-btn-group button {
+  font-size: 20px;
   color: #d9d9d9;
-}
-.div8 .filter-group #usuario {
-  padding: 3px 12px;
-  border-radius: 32px;
-  align-items: center;
+  background: none;
   border: none;
-  background-color: #3a3a3a;
-  color: #d9d9d9;
-}
-.div8 .filter-group button {
-  padding: 3px 12px;
+  font-weight: 700;
+  cursor: pointer;
   border-radius: 32px;
-  border: none;
-  background-color: #e9d362;
+  padding: 4px 22px;
+  transition: all 0.4s ease-in-out;
+}
+.div8 .filter-group .filter-btn-group button:hover {
+  background: #e9d362;
   color: #242424;
-  text-transform: uppercase;
+  padding: 4px 22px;
+  border-radius: 32px;
+}
+.div8 .filter-group .filter-menu {
+  position: relative;
+}
+.div8 .filter-group .filter-menu .filter-btn {
+  background: #e9d362;
+  border: none;
+  color: #242424;
+  font-size: 1.2rem;
+  padding: 6px 24px;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.div8 .filter-group .filter-menu .filter-btn:hover {
+  background: #b3811b;
+}
+.div8 .filter-group .filter-menu .filter-dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  border: 1px solid #5d5d5d;
+  left: 0;
+  padding: 15px;
+  border-radius: 8px;
+  background: #242424;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 250px;
+  z-index: 10;
+}
+.div8 .filter-group .filter-menu .filter-dropdown.show {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.div8 .filter-group .filter-menu .filter-dropdown label {
   font-size: 12px;
+  color: #686868;
+}
+.div8 .filter-group .filter-menu .filter-dropdown input, .div8 .filter-group .filter-menu .filter-dropdown select {
+  color: #d9d9d9;
+  background-color: #3a3a3a;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #5d5d5d;
+  width: 100%;
+  box-sizing: border-box;
+}
+.div8 .filter-group .filter-menu .filter-dropdown .apply-btn {
+  background: #e9d362;
+  border: none;
+  color: #242424;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.div8 .filter-group .filter-menu .filter-dropdown .apply-btn:hover {
+  background: #b3811b;
 }
 
 .div9 {
