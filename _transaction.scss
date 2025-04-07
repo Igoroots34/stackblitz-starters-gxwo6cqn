@@ -1,0 +1,150 @@
+main {
+    padding: 24px;
+    display: flex;
+    width: auto;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+
+    .head {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+
+        button {
+            cursor: pointer;
+            border: none;
+            padding: 3px 16px;
+            border-radius: 32px;
+            background-color: $ryda-primary;
+            font-size: 16px;
+            font-weight: 700;
+
+            &:hover {
+                background-color: $ryda-primary-light;
+            }
+        }
+    }
+
+    .table-container {
+        background-color: $ryda-bg-alt;
+        border: 1px solid $ryda-border;
+        border-radius: 12px;
+        padding: 24px;
+        width: auto;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th,
+            td {
+                text-align: left;
+                padding: 12px;
+
+                .badge {
+                    background-color: $ryda-info-light;
+                    border-radius: 15px;
+                    padding: 4px 10px;
+                    color: $ryda-text-inverse;
+                    font-size: 0.85em;
+                }
+
+                .table-actions {
+
+                    button {
+                        padding: 6px 7px;
+                        border: none;
+                        border-radius: 60px;
+                        font-size: 16px;
+                        cursor: pointer;
+                        background: $ryda-secondary;
+                        color: $ryda-secondary-light;
+                        transition: all 0.4s ease-in-out;
+
+
+                    }
+
+                    .edit {
+                        &:hover {
+                            background: $ryda-primary-dark;
+                            color: $ryda-primary-light;
+                        }
+                    }
+
+                    .delete {
+                        &:hover {
+                            background: $ryda-error-dark;
+                            color: $ryda-error-light;
+                        }
+                    }
+                }
+            }
+
+            th {
+                border-bottom: 1px solid $ryda-border;
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: $ryda-bg-soft;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 4px;
+    border-radius: 6px;
+    background-color: $ryda-bg-soft;
+    transition: background-color 0.3s;
+}
+
+.pagination a.active,
+.pagination a:hover {
+    background-color: $ryda-primary;
+    color: $ryda-text-inverse;
+}
+
+.tag-container {
+    display: grid;
+    width: auto;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    column-gap: 5px;
+    row-gap: 5px;
+    .tag-card {
+        background-color: $ryda-bg-alt;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
+        border-radius: 32px;
+
+        .tag-category {
+            font-size: 18px;
+        }
+
+        .tag-value {
+            font-weight: 700;
+        }
+    }
+}

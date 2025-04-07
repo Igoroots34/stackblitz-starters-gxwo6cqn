@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -123,6 +124,128 @@ header nav a:active {
 
 .show {
   display: block;
+}
+
+main {
+  padding: 24px;
+  display: flex;
+  width: auto;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
+}
+main .head {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+main .head button {
+  cursor: pointer;
+  border: none;
+  padding: 3px 16px;
+  border-radius: 32px;
+  background-color: #e9d362;
+  font-size: 16px;
+  font-weight: 700;
+}
+main .head button:hover {
+  background-color: #f7f3ca;
+}
+main .table-container {
+  background-color: #242424;
+  border: 1px solid #3a3a3a;
+  border-radius: 12px;
+  padding: 24px;
+  width: auto;
+}
+main .table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+main .table-container table th,
+main .table-container table td {
+  text-align: left;
+  padding: 12px;
+}
+main .table-container table th .badge,
+main .table-container table td .badge {
+  background-color: #64b5f6;
+  border-radius: 15px;
+  padding: 4px 10px;
+  color: #242424;
+  font-size: 0.85em;
+}
+main .table-container table th .table-actions button,
+main .table-container table td .table-actions button {
+  padding: 6px 7px;
+  border: none;
+  border-radius: 60px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #d9d9d9;
+  color: #676767;
+  transition: all 0.4s ease-in-out;
+}
+main .table-container table th .table-actions .edit:hover,
+main .table-container table td .table-actions .edit:hover {
+  background: #b3811b;
+  color: #f7f3ca;
+}
+main .table-container table th .table-actions .delete:hover,
+main .table-container table td .table-actions .delete:hover {
+  background: #b00020;
+  color: #ff8a80;
+}
+main .table-container table th {
+  border-bottom: 1px solid #3a3a3a;
+}
+main .table-container table tbody tr:nth-child(even) {
+  background-color: #3a3a3a;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  color: #ccc;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 0 4px;
+  border-radius: 6px;
+  background-color: #3a3a3a;
+  transition: background-color 0.3s;
+}
+
+.pagination a.active,
+.pagination a:hover {
+  background-color: #e9d362;
+  color: #242424;
+}
+
+.tag-container {
+  display: grid;
+  width: auto;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  column-gap: 5px;
+  row-gap: 5px;
+}
+.tag-container .tag-card {
+  background-color: #242424;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 32px;
+}
+.tag-container .tag-card .tag-category {
+  font-size: 18px;
+}
+.tag-container .tag-card .tag-value {
+  font-weight: 700;
 }
 
 .parent {
@@ -566,8 +689,8 @@ header nav a:active {
   grid-area: 1/5/2/9;
   background-color: #242424;
   border: 1px solid #3a3a3a;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   border-radius: 34px;
   padding: 6px;
 }
@@ -611,7 +734,7 @@ header nav a:active {
   transition: background 0.3s;
 }
 .div8 .filter-group .filter-menu .filter-btn:hover {
-  background: #b3811b;
+  background: #f7f3ca;
 }
 .div8 .filter-group .filter-menu .filter-dropdown {
   display: none;
@@ -655,7 +778,7 @@ header nav a:active {
   transition: background 0.3s;
 }
 .div8 .filter-group .filter-menu .filter-dropdown .apply-btn:hover {
-  background: #b3811b;
+  background: #f7f3ca;
 }
 
 .div9 {
@@ -692,7 +815,7 @@ header nav a:active {
   font-weight: 600;
 }
 .div9 .budget-view {
-  margin-top: 8px;
+  margin-top: 6px;
   background-color: #3a3a3a;
   padding: 8px;
   border-radius: 16px;

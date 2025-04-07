@@ -1,182 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
-// Backgrounds
-$ryda-bg: #141414;
-$ryda-bg-alt: #242424;
-$ryda-bg-soft: #3a3a3a;
-$ryda-bg-overlay: rgba(0, 0, 0, 0.6);
-
-// Textos
-$ryda-text: #d9d9d9;
-$ryda-text-muted: #686868;
-$ryda-text-inverse: #242424;
-$ryda-text-light: #ffffff;
-$ryda-text-dark: #000000;
-$ryda-text-emphasis: #e9d362;
-
-// Cores principais
-$ryda-primary: #e9d362;
-$ryda-primary-dark: #f7f3ca;
-$ryda-primary-light: #b3811b;
-$ryda-secondary: #d9d9d9;
-$ryda-secondary-dark: #999999;
-$ryda-secondary-light: #676767;
-
-// Estados
-$ryda-success: #4caf50;
-$ryda-success-dark: #388e3c;
-$ryda-success-light: #81c784;
-$ryda-warning: #ff9800;
-$ryda-warning-dark: #f57c00;
-$ryda-warning-light: #ffb74d;
-$ryda-error: #cf6679;
-$ryda-error-dark: #b00020;
-$ryda-error-light: #ff8a80;
-$ryda-info: #2196f3;
-$ryda-info-dark: #1976d2;
-$ryda-info-light: #64b5f6;
-
-// Bordas
-$ryda-border: #3a3a3a;
-$ryda-border-light: #262626;
-$ryda-border-dark: #5d5d5d;
-
-// Elementos Interativos
-$ryda-hover: rgba(255, 255, 255, 0.1);
-$ryda-focus: rgba(255, 255, 255, 0.2);
-$ryda-disabled: rgba(255, 255, 255, 0.3);
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  color: $ryda-text;
-  background-color: $ryda-bg;
-  height: 100vh;
-  width: 100vw;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  nav {
-    background-color: $ryda-bg-alt;
-    border: 1px solid $ryda-border;
-    padding: 14px 37px;
-    border-radius: 32px;
-    display: flex;
-    gap: 30px;
-
-    a {
-      text-decoration: none;
-      color: $ryda-text-muted;
-      font-weight: 500;
-      transition: all 100ms ease-in-out;
-
-      &:hover {
-        color: $ryda-text;
-      }
-      &:active {
-        color: #000;
-      }
-    }
-  }
-}
-
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-}
-
-.icon-btn-plus {
-  display: flex;
-  margin: 0;
-  background: $ryda-primary;
-  padding: 10px 10px;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  border-radius: 32px;
-}
-
-.icon-btn {
-  background: none;
-  border: none;
-  color: $ryda-text;
-  font-size: 1rem;
-  cursor: pointer;
-
-  &:hover {
-    color: $ryda-hover;
-  }
-}
-
-.btn-group {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  background-color: $ryda-bg-alt;
-  border: 1px solid $ryda-border;
-  padding: 10px 18px;
-  border-radius: 32px;
-}
-
-.avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 50px;
-  background: $ryda-bg-soft;
-  border: 1px solid $ryda-border-dark;
-  border-radius: 4px;
-  width: 160px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.dropdown a {
-  display: block;
-  padding: 10px 16px;
-  color: $ryda-text;
-  text-decoration: none;
-}
-
-.dropdown a:hover {
-  background-color: $ryda-hover;
-}
-
-.show {
-  display: block;
-}
+@import 'colors';
+@import 'reset';
+@import 'transaction';
 
 .parent {
   display: grid;
@@ -667,8 +493,8 @@ header {
   grid-area: 1 / 5 / 2 / 9;
   background-color: $ryda-bg-alt;
   border: 1px solid $ryda-border;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   border-radius: 34px;
   padding: 6px;
 
@@ -809,7 +635,7 @@ header {
     }
   }
   .budget-view {
-    margin-top: 8px;
+    margin-top: 6px;
     background-color: $ryda-bg-soft;
     padding: 8px;
     border-radius: 16px;

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    color: $ryda-text;
+    background-color: $ryda-bg;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+  
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  
+    nav {
+      background-color: $ryda-bg-alt;
+      border: 1px solid $ryda-border;
+      padding: 14px 37px;
+      border-radius: 32px;
+      display: flex;
+      gap: 30px;
+  
+      a {
+        text-decoration: none;
+        color: $ryda-text-muted;
+        font-weight: 500;
+        transition: all 100ms ease-in-out;
+  
+        &:hover {
+          color: $ryda-text;
+        }
+        &:active {
+          color: #000;
+        }
+      }
+    }
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+  }
+  
+  .icon-btn-plus {
+    display: flex;
+    margin: 0;
+    background: $ryda-primary;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 32px;
+  }
+  
+  .icon-btn {
+    background: none;
+    border: none;
+    color: $ryda-text;
+    font-size: 1rem;
+    cursor: pointer;
+  
+    &:hover {
+      color: $ryda-hover;
+    }
+  }
+  
+  .btn-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background-color: $ryda-bg-alt;
+    border: 1px solid $ryda-border;
+    padding: 10px 18px;
+    border-radius: 32px;
+  }
+  
+  .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background: $ryda-bg-soft;
+    border: 1px solid $ryda-border-dark;
+    border-radius: 4px;
+    width: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .dropdown a {
+    display: block;
+    padding: 10px 16px;
+    color: $ryda-text;
+    text-decoration: none;
+  }
+  
+  .dropdown a:hover {
+    background-color: $ryda-hover;
+  }
+  
+  .show {
+    display: block;
+  }

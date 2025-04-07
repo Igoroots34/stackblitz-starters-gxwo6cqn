@@ -1,59 +1,179 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-  </head>
-  <body class="container">
-    <header>
-      <div class="logo">MinhaLogo</div>
 
-      <nav>
-        <a href="index.html">Dashboard</a>
-        <a href="transaction.html" active>Transações</a>
-        <a href="#">Orçamentos</a>
-        <a href="#">Simuladores</a>
-        <a href="#">Investimentos</a>
-        <a href="#">Importar</a>
-        <a href="#">Relatórios</a>
-      </nav>
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
 
-      <div class="actions">
-        <button class="icon-btn-plus" type="button" title="Acesso rápido">
-          <i class="bi bi-plus"></i>
+<body class="container">
+  <header>
+    <div class="logo">MinhaLogo</div>
+
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="transaction.html" active>Transações</a>
+      <a href="#">Orçamentos</a>
+      <a href="#">Simuladores</a>
+      <a href="#">Investimentos</a>
+      <a href="#">Importar</a>
+      <a href="#">Relatórios</a>
+    </nav>
+
+    <div class="actions">
+      <button class="icon-btn-plus" type="button" title="Acesso rápido">
+        <i class="bi bi-plus"></i>
+      </button>
+      <div class="btn-group">
+        <button class="icon-btn" type="button" title="Notificações">
+          <i class="bi bi-bell"></i>
         </button>
-        <div class="btn-group">
-          <button class="icon-btn" type="button" title="Notificações">
-            <i class="bi bi-bell"></i>
-          </button>
-          <button class="icon-btn" type="button" title="Acesso rápido">
-            <i class="bi bi-info-circle"></i>
-          </button>
-        </div>
-
-        <div class="avatar" onclick="toggleDropdown()">
-          <img src=https://ui-avatars.com/api/?name=Igor+Senario" alt="Perfil"
-          />
-        </div>
-
-        <div class="dropdown" id="dropdown">
-          <a href="#">Meu Perfil</a>
-          <a href="#">Configurações</a>
-          <a href="#">Sair</a>
-        </div>
+        <button class="icon-btn" type="button" title="Acesso rápido">
+          <i class="bi bi-info-circle"></i>
+        </button>
       </div>
-    </header>
 
-    <main>
-        <h1>Transações</h1>
-    </main>
+      <div class="avatar" onclick="toggleDropdown()">
+        <img src=https://ui-avatars.com/api/?name=Igor+Senario" alt="Perfil" />
+      </div>
 
-  </body>
+      <div class="dropdown" id="dropdown">
+        <a href="#">Meu Perfil</a>
+        <a href="#">Configurações</a>
+        <a href="#">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="head">
+      <h1>Transações</h1>
+      <button type="button">Adicionar Transação</button>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Tipo</th>
+            <th>Data</th>
+            <th>Categoria</th>
+            <th>Usuário</th>
+            <th>Valor</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Repetindo linhas para demonstração -->
+          <tr>
+            <td>Cinema</td>
+            <td>Despesa</td>
+            <td>18/03/2025</td>
+            <td><span class="badge">Entretenimento</span></td>
+            <td>Igor</td>
+            <td>64,00</td>
+            <td>
+              <div class="table-actions">
+                <button class="edit" type="button"><i class="bi bi-pencil-square"></i></button>
+                <button class="delete" type="button"><i class="bi bi-trash"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Cinema</td>
+            <td>Despesa</td>
+            <td>18/03/2025</td>
+            <td><span class="badge">Entretenimento</span></td>
+            <td>Igor</td>
+            <td>64,00</td>
+            <td>
+              <div class="table-actions">
+                <button class="edit" type="button"><i class="bi bi-pencil-square"></i></button>
+                <button class="delete" type="button"><i class="bi bi-trash"></i></button>
+              </div>
+            </td>
+          </tr>
+          <!-- Copie essas linhas quantas vezes precisar -->
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+      </div>
+    </div>
+    
+    <div class="tag-container">
+      <table>
+        <thead>
+            <tr>
+                <th>Recebimentos</th>
+                <th>Jan</th><th>Fev</th><th>Mar</th><th>Abr</th><th>Mai</th><th>Jun</th><th>Jul</th>
+                <th>Ago</th><th>Set</th><th>Out</th><th>Nov</th><th>Dez</th><th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Salário</td><td></td><td></td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>40.261,70</td></tr>
+            <tr><td>Salário cônjuge</td><td colspan="12"></td><td>0,00</td></tr>
+            <tr><td>Salário outros</td><td></td><td></td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>1.800,00</td></tr>
+            <tr><td>13º salário/Férias</td><td colspan="12"></td><td>0,00</td></tr>
+            <tr><td>Bônus anual</td><td colspan="12"></td><td>0,00</td></tr>
+            <tr><td>Resgate de investimentos</td><td colspan="12"></td><td>0,00</td></tr>
+            <tr><td>Rendas extras</td><td colspan="12"></td><td>0,00</td></tr>
+            <tr><td>Vendas de bens</td><td colspan="12"></td><td>0,00</td></tr>
+            <tr><td>Outros</td><td colspan="12"></td><td>0,00</td></tr>
+            <tr class="section-title"><td>Total de renda</td><td>0,00</td><td>0,00</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>42.061,70</td></tr>
+        </tbody>
+        <thead>
+            <tr class="section-title"><td colspan="14">Despesas com a renda</td></tr>
+        </thead>
+        <tbody>
+            <tr><td>Imposto de renda</td><td></td><td></td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>1.660,00</td></tr>
+            <tr><td>INSS</td><td></td><td></td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>3.765,50</td></tr>
+            <tr><td>Tarifas bancárias</td><td colspan="12"></td><td>0,00</td></tr>
+            <tr><td>Outras</td><td></td><td></td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>644,10</td></tr>
+        </tbody>
+        <thead>
+          <tr>
+              <th>Recebimentos</th>
+              <th>Jan</th><th>Fev</th><th>Mar</th><th>Abr</th><th>Mai</th><th>Jun</th><th>Jul</th>
+              <th>Ago</th><th>Set</th><th>Out</th><th>Nov</th><th>Dez</th><th>Total</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr><td>Salário</td><td></td><td></td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>4.026,17</td><td>40.261,70</td></tr>
+          <tr><td>Salário cônjuge</td><td colspan="12"></td><td>0,00</td></tr>
+          <tr><td>Salário outros</td><td></td><td></td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>180,00</td><td>1.800,00</td></tr>
+          <tr><td>13º salário/Férias</td><td colspan="12"></td><td>0,00</td></tr>
+          <tr><td>Bônus anual</td><td colspan="12"></td><td>0,00</td></tr>
+          <tr><td>Resgate de investimentos</td><td colspan="12"></td><td>0,00</td></tr>
+          <tr><td>Rendas extras</td><td colspan="12"></td><td>0,00</td></tr>
+          <tr><td>Vendas de bens</td><td colspan="12"></td><td>0,00</td></tr>
+          <tr><td>Outros</td><td colspan="12"></td><td>0,00</td></tr>
+          <tr class="section-title"><td>Total de renda</td><td>0,00</td><td>0,00</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>4.206,17</td><td>42.061,70</td></tr>
+      </tbody>
+      <thead>
+          <tr class="section-title"><td colspan="14">Despesas com a renda</td></tr>
+      </thead>
+      <tbody>
+          <tr><td>Imposto de renda</td><td></td><td></td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>166,00</td><td>1.660,00</td></tr>
+          <tr><td>INSS</td><td></td><td></td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>376,55</td><td>3.765,50</td></tr>
+          <tr><td>Tarifas bancárias</td><td colspan="12"></td><td>0,00</td></tr>
+          <tr><td>Outras</td><td></td><td></td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>64,41</td><td>644,10</td></tr>
+      </tbody>
+        <!-- Continue adicionando linhas conforme as categorias da sua tabela -->
+    </table>
+      
+    </div>
+  </main>
+
+</body>
+
 </html>
