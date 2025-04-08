@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+
+<body class="container">
+  <header>
+    <div class="logo">MinhaLogo</div>
+
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="transaction.html" active>Transações</a>
+      <a href="budget.html">Orçamentos</a>
+      <a href="simulator.html">Simuladores</a>
+      <a href="#">Investimentos</a>
+      <a href="#">Importar</a>
+      <a href="#">Relatórios</a>
+    </nav>
+
+    <div class="actions">
+      <button class="icon-btn-plus" type="button" title="Acesso rápido">
+        <i class="bi bi-plus"></i>
+      </button>
+      <div class="btn-group">
+        <button class="icon-btn" type="button" title="Notificações">
+          <i class="bi bi-bell"></i>
+        </button>
+        <button class="icon-btn" type="button" title="Acesso rápido">
+          <i class="bi bi-info-circle"></i>
+        </button>
+      </div>
+
+      <div class="avatar" onclick="toggleDropdown()">
+        <img src=https://ui-avatars.com/api/?name=Igor+Senario" alt="Perfil" />
+      </div>
+
+      <div class="dropdown" id="dropdown">
+        <a href="#">Meu Perfil</a>
+        <a href="#">Configurações</a>
+        <a href="#">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="head">
+      <h1>Orçamentos</h1>
+      <button type="button">Adicionar Orçamento</button>
+    </div>
+    
+    <div class="budget">
+      <div class="budget-view">
+        <div class="tag">
+          <div class="icon-title">
+            <div class="title">Moradia</div>
+            <div class="sub-title">Orçamento Mensal</div>
+          </div>
+          <div class="percent">64%</div>
+        </div>
+        <div class="tag-budget">
+          <div class="tag-value-budget">
+            R$ 3200 de 5000
+          </div>
+          <div class="tag-rest-budget">
+            R$ 1700
+          </div>
+        </div>
+        <progress value="64" max="100"></progress>
+        <div class="tag-date-budget">
+          01/03/2025 - 31/03/2025
+        </div>
+        <div class="tag-btn-budget">
+          <button class="btn-edit" type="button">Editar</button>
+          <button class="btn-delete" type="button">Deletar</button>
+        </div>
+      </div>
+      <div class="budget-view">
+        <div class="tag">
+          <div class="icon-title">
+            <div class="title">Moradia</div>
+            <div class="sub-title">Orçamento Mensal</div>
+          </div>
+          <div class="percent">64%</div>
+        </div>
+        <div class="tag-budget">
+          <div class="tag-value-budget">
+            R$ 3200 de 5000
+          </div>
+          <div class="tag-rest-budget">
+            R$ 1700
+          </div>
+        </div>
+        <progress value="64" max="100"></progress>
+        <div class="tag-date-budget">
+          01/03/2025 - 31/03/2025
+        </div>
+        <div class="tag-btn-budget">
+          <button class="btn-edit" type="button">Editar</button>
+          <button class="btn-delete" type="button">Deletar</button>
+        </div>
+      </div>
+      <div class="budget-view">
+        <div class="tag">
+          <div class="icon-title">
+            <div class="title">Moradia</div>
+            <div class="sub-title">Orçamento Mensal</div>
+          </div>
+          <div class="percent">64%</div>
+        </div>
+        <div class="tag-budget">
+          <div class="tag-value-budget">
+            R$ 3200 de 5000
+          </div>
+          <div class="tag-rest-budget">
+            R$ 1700
+          </div>
+        </div>
+        <progress value="64" max="100"></progress>
+        <div class="tag-date-budget">
+          01/03/2025 - 31/03/2025
+        </div>
+        <div class="tag-btn-budget">
+          <button class="btn-edit" type="button">Editar</button>
+          <button class="btn-delete" type="button">Deletar</button>
+        </div>
+      </div>
+      <div class="budget-view">
+        <div class="tag">
+          <div class="icon-title">
+            <div class="title">Moradia</div>
+            <div class="sub-title">Orçamento Mensal</div>
+          </div>
+          <div class="percent">64%</div>
+        </div>
+        <div class="tag-budget">
+          <div class="tag-value-budget">
+            R$ 3200 de 5000
+          </div>
+          <div class="tag-rest-budget">
+            R$ 1700
+          </div>
+        </div>
+        <progress value="64" max="100"></progress>
+        <div class="tag-date-budget">
+          01/03/2025 - 31/03/2025
+        </div>
+        <div class="tag-btn-budget">
+          <button class="btn-edit" type="button">Editar</button>
+          <button class="btn-delete" type="button">Deletar</button>
+        </div>
+      </div>
+      <div class="budget-view">
+        <div class="tag">
+          <div class="icon-title">
+            <div class="title">Moradia</div>
+            <div class="sub-title">Orçamento Mensal</div>
+          </div>
+          <div class="percent">64%</div>
+        </div>
+        <div class="tag-budget">
+          <div class="tag-value-budget">
+            R$ 3200 de 5000
+          </div>
+          <div class="tag-rest-budget">
+            R$ 1700
+          </div>
+        </div>
+        <progress value="64" max="100"></progress>
+        <div class="tag-date-budget">
+          01/03/2025 - 31/03/2025
+        </div>
+        <div class="tag-btn-budget">
+          <button class="btn-edit" type="button">Editar</button>
+          <button class="btn-delete" type="button">Deletar</button>
+        </div>
+      </div>
+      <div class="budget-view">
+        <div class="tag">
+          <div class="icon-title">
+            <div class="title">Moradia</div>
+            <div class="sub-title">Orçamento Mensal</div>
+          </div>
+          <div class="percent">64%</div>
+        </div>
+        <div class="tag-budget">
+          <div class="tag-value-budget">
+            R$ 3200 de 5000
+          </div>
+          <div class="tag-rest-budget">
+            R$ 1700
+          </div>
+        </div>
+        <progress value="64" max="100"></progress>
+        <div class="tag-date-budget">
+          01/03/2025 - 31/03/2025
+        </div>
+        <div class="tag-btn-budget">
+          <button class="btn-edit" type="button">Editar</button>
+          <button class="btn-delete" type="button">Deletar</button>
+        </div>
+      </div>
+      <div class="budget-view">
+        <div class="tag">
+          <div class="icon-title">
+            <div class="title">Moradia</div>
+            <div class="sub-title">Orçamento Mensal</div>
+          </div>
+          <div class="percent">64%</div>
+        </div>
+        <div class="tag-budget">
+          <div class="tag-value-budget">
+            R$ 3200 de 5000
+          </div>
+          <div class="tag-rest-budget">
+            R$ 1700
+          </div>
+        </div>
+        <progress value="64" max="100"></progress>
+        <div class="tag-date-budget">
+          01/03/2025 - 31/03/2025
+        </div>
+        <div class="tag-btn-budget">
+          <button class="btn-edit" type="button">Editar</button>
+          <button class="btn-delete" type="button">Deletar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>

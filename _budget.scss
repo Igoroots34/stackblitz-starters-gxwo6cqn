@@ -1,0 +1,120 @@
+.budget {
+    display: grid;
+    grid-template-columns: repeat(3, 340px);
+    gap: 17px;
+    width: 100%;
+    justify-content: center;
+
+    .budget-view {
+        width: 340px;
+        margin-top: 6px;
+        background-color: $ryda-bg-alt;
+        padding: 8px;
+        border-radius: 16px;
+        border: 1px solid $ryda-border;
+
+        .tag {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+
+            .icon-title {
+                display: flex;
+                flex-direction: column;
+                justify-items: end;
+                padding-bottom: 6px;
+
+                .title {
+                    font-weight: 600;
+                }
+
+                .sub-title {
+                    color: $ryda-secondary-dark;
+                    font-size: 12px;
+                }
+            }
+
+            .percent {
+                font-size: 10px;
+                background-color: $ryda-primary;
+                color: $ryda-text-inverse;
+                padding: 3px 12px;
+                border-radius: 16px;
+            }
+        }
+
+        .tag-budget {
+            color: $ryda-secondary-dark;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            height: 6px;
+        }
+
+        progress {
+            border-radius: 32px;
+            width: 100%;
+            height: 10px;
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: $ryda-secondary-light;
+            border-radius: 32px;
+        }
+
+        progress::-webkit-progress-value {
+            background-color: $ryda-primary;
+            border-radius: 32px;
+        }
+
+        progress::-moz-progress-bar {
+            /* style rules */
+        }
+
+        .tag-date-budget {
+            color: $ryda-secondary-dark;
+            margin: 6px 0;
+            font-size: 10px;
+        }
+
+        .tag-btn-budget {
+            display: flex;
+           justify-content: end;
+           gap: 8px;
+           
+
+        .btn-edit {
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 32px;
+            cursor: pointer;
+            background: none;
+            color: $ryda-text;
+            border: 1px solid $ryda-text;
+
+            &:hover {
+                background: $ryda-text;
+                color: $ryda-text-inverse;
+                border: 1px solid $ryda-text;
+            }
+        }
+
+        .btn-delete {
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 32px;
+            cursor: pointer;
+            background: none;
+            color: $ryda-error-light;
+            border: 1px solid $ryda-error-light;
+
+            &:hover {
+                background: $ryda-error-light;
+                color: $ryda-text-inverse;
+                border: 1px solid $ryda-error-light;
+            }
+        }
+        }
+
+    }
+}

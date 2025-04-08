@@ -1,0 +1,51 @@
+.simulator {
+    display: grid;
+    grid-template-columns: repeat(5, 220px);
+    gap: 17px;
+    width: 100%;
+    justify-content: center;
+
+    .card-simulator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 220px;
+        height: 320px;
+        margin-top: 6px;
+        background-color: $ryda-bg-alt;
+        padding: 8px;
+        border-radius: 16px;
+        border: 1px solid $ryda-border;
+
+        .card-icon {
+            font-size: 38px;
+        }
+
+        .card-info {
+            display: flex;
+            justify-content: center;
+            font-size: 10px;
+            width: 80%;
+            
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 12px;
+                
+            }
+        }
+
+        button {
+            background-color: $ryda-primary;
+            border: none;
+            border-radius: 32px;
+            font-size: 18px;
+            font-weight: 700;
+            width: 80%;
+            height: 32px;
+        }
+
+    }
+}
