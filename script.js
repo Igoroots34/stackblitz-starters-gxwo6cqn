@@ -61,3 +61,99 @@ document.querySelector('.apply-btn').addEventListener('click', () => {
   // Aqui você faria sua lógica de filtragem (ex: chamada para API ou filtrar dados na página)
 });
 
+
+const dropZone = document.getElementById('drop-zone');
+  const fileInput = document.getElementById('file-input');
+  const fileList = document.getElementById('file-list');
+  let arquivosSelecionados = [];
+
+  dropZone.addEventListener('click', () => fileInput.click());
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('dragover');
+  });
+
+  dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('dragover');
+  });
+
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    handleFiles(e.dataTransfer.files);
+  });
+
+  fileInput.addEventListener('change', () => {
+    handleFiles(fileInput.files);
+  });
+
+  function handleFiles(files) {
+    arquivosSelecionados = Array.from(files);
+    fileList.innerHTML = arquivosSelecionados.map(f => `<div>${f.name}</div>`).join('');
+  }
+
+  function enviarArquivos() {
+    if (arquivosSelecionados.length === 0) {
+      alert('Por favor, selecione ao menos um arquivo.');
+      return;
+    }
+
+    const formData = new FormData();
+    arquivosSelecionados.forEach((file, i) => {
+      formData.append(`arquivo${i + 1}`, file);
+    });
+
+    // Exemplo de envio com fetch (requer backend para receber)
+    fetch('/upload', {
+      method: 'POST',
+      body: formData
+    })
+    .then(resp => {
+      if (resp.ok) {
+        alert('Arquivos enviados com sucesso!');
+        fileList.innerHTML = '';
+        arquivosSelecionados = [];
+      } else {
+        alert('Erro no envio.');
+      }
+    })
+    .catch(() => alert('Erro ao conectar com o servidor.'));
+  }
+
+  
+
+function abrirModal() {
+  document.getElementById("modal-transacao").style.display = "block";
+}
+
+function fecharModal() {
+  document.getElementById("modal-transacao").style.display = "none";
+}
+
+// Fecha se clicar fora do modal
+window.onclick = function(event) {
+  const modal = document.getElementById("modal-transacao");
+  if (event.target === modal) {
+    fecharModal();
+  }
+};
+
+
+function mostrarCampos(tipo) {
+  const receita = document.getElementById('campos-receita');
+  const despesa = document.getElementById('campos-despesa');
+
+  if (tipo === 'receita') {
+    receita.style.display = 'block';
+    despesa.style.display = 'none';
+  } else if (tipo === 'despesa') {
+    receita.style.display = 'none';
+    despesa.style.display = 'block';
+  }
+}
+
+// Executa automaticamente ao carregar a página
+window.onload = function () {
+  mostrarCampos('receita');
+};

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+
+<body class="container">
+  <header>
+    <div class="logo">MinhaLogo</div>
+
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="transaction.html" active>Transações</a>
+      <a href="budget.html">Orçamentos</a>
+      <a href="simulator.html">Simuladores</a>
+      <!-- <a href="#">Investimentos</a> -->
+      <a href="import.html">Importar</a>
+      <a href="#">Relatórios</a>
+    </nav>
+
+    <div class="actions">
+      <button class="icon-btn-plus" type="button" title="Acesso rápido">
+        <i class="bi bi-plus"></i>
+      </button>
+      <div class="btn-group">
+        <button class="icon-btn" type="button" title="Notificações">
+          <i class="bi bi-bell"></i>
+        </button>
+        <button class="icon-btn" type="button" title="Acesso rápido">
+          <i class="bi bi-info-circle"></i>
+        </button>
+      </div>
+
+      <div class="avatar" onclick="toggleDropdown()">
+        <img src=https://ui-avatars.com/api/?name=Igor+Senario" alt="Perfil" />
+      </div>
+
+      <div class="dropdown" id="dropdown">
+        <a href="#">Meu Perfil</a>
+        <a href="#">Configurações</a>
+        <a href="#">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="upload-container">
+        <h2>Importe seus Arquivos</h2>
+      
+        <div class="drop-zone" id="drop-zone">
+          <span><i class="bi bi-upload"></i></span>
+          <p><b>Arraste</b> e <b>solte</b> seus arquivos <b>aqui</b> ou <b>clique para selecionar</b></p>
+          <input type="file" id="file-input" multiple hidden accept=".pdf,.csv,.xls,.xlsx">
+        </div>
+      
+        <div class="file-list" id="file-list"></div>
+      
+        <button class="submit-button" onclick="enviarArquivos()">Enviar Documentos</button>
+      </div>
+    
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Tipo</th>
+            <th>Data</th>
+            <th>Categoria</th>
+            <th>Usuário</th>
+            <th>Valor</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Repetindo linhas para demonstração -->
+          <tr>
+            <td>Cinema</td>
+            <td>Despesa</td>
+            <td>18/03/2025</td>
+            <td><span class="badge">Entretenimento</span></td>
+            <td>Igor</td>
+            <td>64,00</td>
+            <td>
+              <div class="table-actions">
+                <button class="edit" type="button"><i class="bi bi-pencil-square"></i></button>
+                <button class="delete" type="button"><i class="bi bi-trash"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Cinema</td>
+            <td>Despesa</td>
+            <td>18/03/2025</td>
+            <td><span class="badge">Entretenimento</span></td>
+            <td>Igor</td>
+            <td>64,00</td>
+            <td>
+              <div class="table-actions">
+                <button class="edit" type="button"><i class="bi bi-pencil-square"></i></button>
+                <button class="delete" type="button"><i class="bi bi-trash"></i></button>
+              </div>
+            </td>
+          </tr>
+          <!-- Copie essas linhas quantas vezes precisar -->
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+      </div>
+    </div>
+    
+    
+  </main>
+<script src="script.js"></script>
+</body>
+
+</html>

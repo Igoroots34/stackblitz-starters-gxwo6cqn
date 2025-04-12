@@ -19,8 +19,8 @@
       <a href="transaction.html" active>Transações</a>
       <a href="budget.html">Orçamentos</a>
       <a href="simulator.html">Simuladores</a>
-      <a href="#">Investimentos</a>
-      <a href="#">Importar</a>
+      <!-- <a href="#">Investimentos</a> -->
+      <a href="import.html">Importar</a>
       <a href="#">Relatórios</a>
     </nav>
 
@@ -52,8 +52,132 @@
   <main>
     <div class="head">
       <h1>Transações</h1>
-      <button type="button">Adicionar Transação</button>
+      <button type="button" onclick="abrirModal()">Adicionar Transação</button>
     </div>
+    <div id="modal-transacao" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <h2>Adicionar Transação</h2>
+        <form id="form-transacao">
+          <div>          
+            <!-- Tipo de Lançamento -->
+            <div class="radio-input">
+              <label class="label">
+                <input type="radio" name="tipo" value="receita" onclick="mostrarCampos('receita')" checked/>
+                <span class="text">Receita</span>
+              </label>
+              <label class="label">
+                <input type="radio" name="tipo" value="despesa" onclick="mostrarCampos('despesa')">
+                <span class="text">Despesa</span>
+              </label>
+            </div>
+          
+            <!-- Campos comuns -->
+            <div id="campos-comuns">
+              <label><strong>Categoria:</strong></label><br>
+              <input type="text" name="categoria" style="width: 100%;"><br><br>
+          
+              <label><strong>Subcategoria (opcional):</strong></label><br>
+              <input type="text" name="subcategoria" style="width: 100%;"><br><br>
+          
+              <label><strong>Descrição:</strong></label><br>
+              <textarea name="descricao" rows="3" style="width: 100%;"></textarea><br><br>
+          
+              <label><strong>Valor (R$):</strong></label><br>
+              <input type="number" name="valor" step="0.01" style="width: 100%;"><br><br>
+          
+              <label><strong>Data do Lançamento:</strong></label><br>
+              <input type="date" name="data_lancamento" style="width: 100%;"><br><br>
+          
+              <label><strong>Competência (Mês de Referência):</strong></label><br>
+              <input type="month" name="competencia" style="width: 100%;"><br><br>
+            </div>
+          
+            <!-- Somente para Receita -->
+            <div id="campos-receita">
+              <label><strong>Forma de Recebimento:</strong></label><br>
+              <select name="forma_recebimento" style="width: 100%;">
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+                <option value="transferencia">Transferência</option>
+                <option value="cartao">Cartão</option>
+                <option value="outro">Outro</option>
+              </select><br><br>
+            </div>
+          
+            <!-- Somente para Despesa -->
+            <div id="campos-despesa" style="display: none;">
+              <label><strong>Forma de Pagamento:</strong></label><br>
+              <select name="forma_pagamento" style="width: 100%;">
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+                <option value="boleto">Boleto</option>
+                <option value="cartao_credito">Cartão de Crédito</option>
+                <option value="cartao_debito">Cartão de Débito</option>
+                <option value="transferencia">Transferência</option>
+                <option value="outro">Outro</option>
+              </select><br><br>
+          
+              <label><strong>Forma de Lançamento:</strong></label><br>
+              <input type="radio" name="forma" value="unico"> Único<br>
+              <input type="radio" name="forma" value="parcelado"> Parcelado - 
+              <input type="number" name="parcelas" placeholder="Qtd. parcelas" min="1"><br>
+              <input type="radio" name="forma" value="recorrente"> Recorrente (mensal, semanal, etc.)<br><br>
+            </div>
+          
+            <!-- Status -->
+            <label><strong>Status do Lançamento:</strong></label><br>
+            <select name="status" style="width: 100%;">
+              <option value="previsto">Previsto</option>
+              <option value="realizado">Realizado</option>
+              <option value="atrasado">Atrasado</option>
+              <option value="cancelado">Cancelado</option>
+            </select><br><br>
+          
+            <label><strong>Data de Pagamento/Recebimento:</strong></label><br>
+            <input type="date" name="data_pagamento" style="width: 100%;"><br><br>
+          
+            <button type="submit" style="padding: 10px 20px; border: none; background-color: #007bff; color: white; border-radius: 5px; cursor: pointer;">Salvar Lançamento</button>
+          </div>
+          
+          <!-- <input type="text" id="descricao" name="descricao" placeholder="Descrição" required />
+    
+          <select id="tipo" name="tipo">
+            <option value="despesa" selected>Despesa</option>
+            <option value="receita">Receita</option>
+          </select>
+    
+          <div class="date">
+            <input id="data" name="data" type="text" 
+            placeholder="DD/MM/YYYY" 
+            onfocus="this.type='date'" 
+            onblur="if (!this.value) this.type='text'" required />
+            <select id="tipo" name="tipo">
+              <option value="despesa" disabled selected>Parcelado?</option>
+              <option value="receita">1x</option>
+              <option value="receita">2x</option>
+              <option value="receita">3x</option>
+              <option value="receita">4x</option>
+              <option value="receita">5x</option>
+              <option value="receita">6x</option>
+              <option value="receita">7x</option>
+              <option value="receita">8x</option>
+              <option value="receita">9x</option>
+              <option value="receita">10x</option>
+              <option value="receita">11x</option>
+              <option value="receita">12x</option>
+            </select>
+          </div>
+    
+          <input type="text" id="categoria" name="categoria" placeholder="Categoria" required />
+    
+          <input type="number" id="valor" name="valor" step="0.01" placeholder="Valor" required />
+    
+          <button type="submit">Salvar</button> -->
+        </form>
+      </div>
+    </div>
+    
     <div class="table-container">
       <table>
         <thead>
@@ -112,7 +236,7 @@
     
     
   </main>
-
+<script src="script.js"></script>
 </body>
 
 </html>
