@@ -175,7 +175,6 @@ main {
     form {
         display: flex;
         flex-direction: column;
-        gap: 6px;
         padding-top: 16px;
 
         /* From Uiverse.io by m1her */
@@ -206,7 +205,7 @@ main {
         }
 
         .label:has(input[type="radio"]:checked) {
-            background: linear-gradient(to bottom, #1d1d1d, #1d1d1d);
+            background: $ryda-primary;
             border-top: none;
         }
 
@@ -255,15 +254,63 @@ main {
         }
 
         .label input[type="radio"]:checked+.text {
-            color: $ryda-primary;
+            color: $ryda-text-inverse;
         }
 
+        #campos-comuns {
+            margin: 0;
+            padding: 0;
+
+            label {
+                font-size: 14px;
+            }
+
+            input {
+                @extend %input-style;
+            }
+        }
+
+        #campos-receita {
+            width: 100%;
+
+            select {
+                @extend %input-style;
+            }
+        }
+
+        #campos-despesa {
+            margin-top: 16px;
+
+            label {
+                font-size: 14px;
+            }
+
+            select,
+            input[type="number"],
+            input[type="text"] {
+                @extend %input-style;
+            }
+
+            input[type="radio"] {
+                margin-right: 6px;
+            }
+
+            input[name="parcelas"] {
+                margin-top: 6px;
+            }
+        }
+
+        textarea {
+            @extend %input-style;
+            resize: none;
+        }
+
+        button[type="submit"] {
+            @extend %button-primary;
+        }
     }
-
-
-
-
 }
+
 
 .close {
     position: absolute;

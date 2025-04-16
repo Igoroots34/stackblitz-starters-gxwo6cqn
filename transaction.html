@@ -74,29 +74,25 @@
           
             <!-- Campos comuns -->
             <div id="campos-comuns">
-              <label><strong>Categoria:</strong></label><br>
-              <input type="text" name="categoria" style="width: 100%;"><br><br>
-          
-              <label><strong>Subcategoria (opcional):</strong></label><br>
-              <input type="text" name="subcategoria" style="width: 100%;"><br><br>
-          
-              <label><strong>Descrição:</strong></label><br>
-              <textarea name="descricao" rows="3" style="width: 100%;"></textarea><br><br>
-          
-              <label><strong>Valor (R$):</strong></label><br>
-              <input type="number" name="valor" step="0.01" style="width: 100%;"><br><br>
-          
-              <label><strong>Data do Lançamento:</strong></label><br>
-              <input type="date" name="data_lancamento" style="width: 100%;"><br><br>
-          
-              <label><strong>Competência (Mês de Referência):</strong></label><br>
-              <input type="month" name="competencia" style="width: 100%;"><br><br>
+              
+              
+              <label>Categoria</label><br>
+              <input type="text" name="categoria"><br><br>
+              
+              <label>Valor (R$):</label><br>
+              <input type="number" name="valor" step="0.01"><br><br>
+              
+              <div class="flatpickr-wrapper" data-input data-toggle>
+                <input type="text" id="date-transaction" />
+                <button type="button" class="calendar-btn">📅</button>
+              </div>
+              
             </div>
-          
+            
             <!-- Somente para Receita -->
             <div id="campos-receita">
-              <label><strong>Forma de Recebimento:</strong></label><br>
-              <select name="forma_recebimento" style="width: 100%;">
+              <label>Forma de Recebimento:</label><br>
+              <select name="forma_recebimento">
                 <option value="dinheiro">Dinheiro</option>
                 <option value="pix">PIX</option>
                 <option value="transferencia">Transferência</option>
@@ -107,8 +103,8 @@
           
             <!-- Somente para Despesa -->
             <div id="campos-despesa" style="display: none;">
-              <label><strong>Forma de Pagamento:</strong></label><br>
-              <select name="forma_pagamento" style="width: 100%;">
+              <label>Forma de Pagamento:</label><br>
+              <select name="forma_pagamento" >
                 <option value="dinheiro">Dinheiro</option>
                 <option value="pix">PIX</option>
                 <option value="boleto">Boleto</option>
@@ -117,8 +113,8 @@
                 <option value="transferencia">Transferência</option>
                 <option value="outro">Outro</option>
               </select><br><br>
-          
-              <label><strong>Forma de Lançamento:</strong></label><br>
+              
+              <label>Forma de Lançamento:</label><br>
               <input type="radio" name="forma" value="unico"> Único<br>
               <input type="radio" name="forma" value="parcelado"> Parcelado - 
               <input type="number" name="parcelas" placeholder="Qtd. parcelas" min="1"><br>
@@ -126,54 +122,22 @@
             </div>
           
             <!-- Status -->
-            <label><strong>Status do Lançamento:</strong></label><br>
-            <select name="status" style="width: 100%;">
+            <label>Status do Lançamento:</label>
+            <select name="status" >
               <option value="previsto">Previsto</option>
               <option value="realizado">Realizado</option>
               <option value="atrasado">Atrasado</option>
               <option value="cancelado">Cancelado</option>
-            </select><br><br>
-          
-            <label><strong>Data de Pagamento/Recebimento:</strong></label><br>
-            <input type="date" name="data_pagamento" style="width: 100%;"><br><br>
-          
-            <button type="submit" style="padding: 10px 20px; border: none; background-color: #007bff; color: white; border-radius: 5px; cursor: pointer;">Salvar Lançamento</button>
-          </div>
-          
-          <!-- <input type="text" id="descricao" name="descricao" placeholder="Descrição" required />
-    
-          <select id="tipo" name="tipo">
-            <option value="despesa" selected>Despesa</option>
-            <option value="receita">Receita</option>
-          </select>
-    
-          <div class="date">
-            <input id="data" name="data" type="text" 
-            placeholder="DD/MM/YYYY" 
-            onfocus="this.type='date'" 
-            onblur="if (!this.value) this.type='text'" required />
-            <select id="tipo" name="tipo">
-              <option value="despesa" disabled selected>Parcelado?</option>
-              <option value="receita">1x</option>
-              <option value="receita">2x</option>
-              <option value="receita">3x</option>
-              <option value="receita">4x</option>
-              <option value="receita">5x</option>
-              <option value="receita">6x</option>
-              <option value="receita">7x</option>
-              <option value="receita">8x</option>
-              <option value="receita">9x</option>
-              <option value="receita">10x</option>
-              <option value="receita">11x</option>
-              <option value="receita">12x</option>
             </select>
+            
+            
+            <label>Observação</label>
+            <textarea name="descricao" rows="3" type="text"></textarea>
           </div>
-    
-          <input type="text" id="categoria" name="categoria" placeholder="Categoria" required />
-    
-          <input type="number" id="valor" name="valor" step="0.01" placeholder="Valor" required />
-    
-          <button type="submit">Salvar</button> -->
+            <button type="submit">Salvar Lançamento</button>
+            
+          
+          
         </form>
       </div>
     </div>
@@ -236,6 +200,15 @@
     
     
   </main>
+  <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+
+  <script>
+    flatpickr("#date-transaction", {
+      dateFormat: "d/m/Y", // formato de data brasileiro
+      locale: "pt" // para português (requer carregar o locale também)
+    });
+  </script>
 <script src="script.js"></script>
 </body>
 
