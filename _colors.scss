@@ -43,31 +43,3 @@ $ryda-border-dark: #5d5d5d;
 $ryda-hover: rgba(255, 255, 255, 0.1);
 $ryda-focus: rgba(255, 255, 255, 0.2);
 $ryda-disabled: rgba(255, 255, 255, 0.3);
-
-%input-style {
-    margin-top: 6px;
-    width: 100%;
-    border: 1px solid $ryda-bg-soft;
-    padding: 6px 12px;
-    border-radius: 8px;
-    color: $ryda-text;
-    background-color: $ryda-bg;
-}
-
-
-%button-primary {
-    margin-top: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    background-color: $ryda-primary;
-    color: $ryda-text-inverse;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-
-    &:hover {
-        background-color: $ryda-primary-dark;
-    }
-}

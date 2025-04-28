@@ -1,0 +1,92 @@
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%badge {
+    background-color: $ryda-info-light;
+    border-radius: 15px;
+    padding: 4px 10px;
+    color: $ryda-text-inverse;
+    font-size: 0.85em;
+}
+
+%input-style-text {
+    margin-top: 6px;
+    width: 100%;
+    border: 1px solid $ryda-bg-soft;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: $ryda-text;
+    background-color: $ryda-bg;
+}
+
+%input-style-radio {
+    margin-top: 6px;
+    width: 100%;
+    border: 1px solid $ryda-bg-soft;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: $ryda-text;
+    background-color: $ryda-bg;
+}
+
+%input-style-span {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 2px solid $ryda-hover;
+    border-radius: 24px;
+    color: $ryda-text-muted;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+    font-size: 12px;
+    background-color: $ryda-bg;
+}
+
+%input-style-textarea {
+    font-family: 'Inter', sans-serif;
+    margin-top: 6px;
+    width: 100%;
+    border: 1px solid $ryda-bg-soft;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: $ryda-text;
+    background-color: $ryda-bg;
+    resize: none;
+}
+
+%button-primary {
+    margin-top: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: $ryda-primary;
+    color: $ryda-text-inverse;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: $ryda-primary-dark;
+    }
+}
+
+%button-secondary {
+    margin-top: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: $ryda-primary;
+    color: $ryda-text-inverse;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: $ryda-primary-dark;
+    }
+}

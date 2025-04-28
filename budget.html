@@ -52,7 +52,101 @@
   <main>
     <div class="head">
       <h1>Orçamentos</h1>
-      <button type="button">Adicionar Orçamento</button>
+      <button type="button" onclick="abrirModalBudget()">Adicionar Orçamento</button>
+    </div>
+
+    <div id="modal-budget" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="fecharModalBudget()">&times;</span>
+        <h2>Adicionar Orçamento</h2>
+        <form id="form-budget">
+
+              <select name="forma_recebimento">
+                <option value="" selected disabled>Forma de Recebimento</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+                <option value="transferencia">Transferência</option>
+                <option value="cartao">Cartão</option>
+                <option value="outro">Outro</option>
+              </select><br><br>
+
+              <input type="text" name="categoria" placeholder="Categoria"><br><br>
+
+              <input type="number" name="valor" step="0.01" placeholder="Valor (R$)"><br><br>
+
+              <div>
+                <input type="text" id="datepicker" placeholder="Data Inicial">
+                <input type="text" id="datepicker" placeholder="Data Final">
+              </div>
+
+            </div>
+
+            <!-- Somente para Receita -->
+            <div id="campos-receita">
+              <select name="forma_recebimento">
+                <option value="" selected disabled>Forma de Recebimento</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+                <option value="transferencia">Transferência</option>
+                <option value="cartao">Cartão</option>
+                <option value="outro">Outro</option>
+              </select><br><br>
+            </div>
+
+            <!-- Somente para Despesa -->
+            <div id="campos-despesa" style="display: none;">
+              <select name="forma_pagamento" class="select-pagamento">
+                <option value="" selected disabled>Forma de Pagamento</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+                <option value="boleto">Boleto</option>
+                <option value="cartao_credito">Cartão de Crédito</option>
+                <option value="cartao_debito">Cartão de Débito</option>
+                <option value="transferencia">Transferência</option>
+                <option value="outro">Outro</option>
+              </select>
+
+              <div class="radio-pagament">
+                <label class="radio-btn">
+                  <input type="radio" name="forma" value="unico">
+                  <span>Único</span>
+                </label>
+
+                <label class="radio-btn">
+                  <input type="radio" name="forma" value="recorrente">
+                  <span>Recorrente</span>
+                </label>
+
+                <div>
+                  <label class="radio-btn">
+                    <input type="radio" name="parcelas" value="parcelas" onclick="toggleDropdownRadio()">
+                    <span>Parcelas</span>
+                  </label>
+  
+                  <div class="dropdown-radio" id="dropdown-radio">
+                    <a href="#">1x</a><a href="#">2x</a><a href="#">3x</a><a href="#">4x</a><a href="#">5x</a><a
+                      href="#">6x</a><a href="#">7x</a><a href="#">8x</a><a href="#">9x</a><a href="#">10x</a><a
+                      href="#">11x</a><a href="#">12x</a><a href="#">Outro</a>
+                  </div>
+                  <input type="text" placeholder="Outro" style="display: none;">
+                </div>
+
+              </div>
+            </div>
+
+
+            
+
+
+            
+            <textarea name="descricao" placeholder="Observações" rows="3" type="text"></textarea>
+          </div>
+          <button type="submit">Salvar Lançamento</button>
+
+
+
+        </form>
+      </div>
     </div>
     
     <div class="budget">
@@ -234,6 +328,7 @@
     </div>
   </main>
 
+  <script src="script.js"></script>
 </body>
 
 </html>

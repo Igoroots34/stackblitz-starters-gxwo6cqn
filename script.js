@@ -9,6 +9,17 @@ window.addEventListener('click', function (e) {
   }
 });
 
+function toggleDropdownRadio() {
+  document.getElementById('dropdown-radio').classList.toggle('show');
+}
+
+// Fecha dropdown se clicar fora
+window.addEventListener('click', function (e) {
+  if (!e.target.closest('.radio-btn')) {
+    document.getElementById('dropdown-radio').classList.remove('show');
+  }
+});
+
 function toggleDatasPersonalizadas() {
   const periodo = document.getElementById('periodo').value;
   const divDatas = document.getElementById('datasPersonalizadas');
@@ -121,7 +132,13 @@ const dropZone = document.getElementById('drop-zone');
     .catch(() => alert('Erro ao conectar com o servidor.'));
   }
 
-  
+function abrirModalBudget() {
+  document.getElementById("modal-budget").style.display = "block";
+}
+
+function fecharModalBudget() {
+  document.getElementById("modal-budget").style.display = "none";
+}
 
 function abrirModal() {
   document.getElementById("modal-transacao").style.display = "block";

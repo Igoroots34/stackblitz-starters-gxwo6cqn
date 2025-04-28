@@ -56,7 +56,7 @@
         <div class="drop-zone" id="drop-zone">
           <span><i class="bi bi-upload"></i></span>
           <p><b>Arraste</b> e <b>solte</b> seus arquivos <b>aqui</b> ou <b>clique para selecionar</b></p>
-          <input type="file" id="file-input" multiple hidden accept=".pdf,.csv,.xls,.xlsx">
+          <input type="file" id="csvFileInput" accept=".csv" />
         </div>
       
         <div class="file-list" id="file-list"></div>
@@ -64,7 +64,7 @@
         <button class="submit-button" onclick="enviarArquivos()">Enviar Documentos</button>
       </div>
     
-    <div class="table-container">
+    <div class="table-container" id="table-container">
       <table>
         <thead>
           <tr>
@@ -77,38 +77,6 @@
             <th>Ação</th>
           </tr>
         </thead>
-        <tbody>
-          <!-- Repetindo linhas para demonstração -->
-          <tr>
-            <td>Cinema</td>
-            <td>Despesa</td>
-            <td>18/03/2025</td>
-            <td><span class="badge">Entretenimento</span></td>
-            <td>Igor</td>
-            <td>64,00</td>
-            <td>
-              <div class="table-actions">
-                <button class="edit" type="button"><i class="bi bi-pencil-square"></i></button>
-                <button class="delete" type="button"><i class="bi bi-trash"></i></button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Cinema</td>
-            <td>Despesa</td>
-            <td>18/03/2025</td>
-            <td><span class="badge">Entretenimento</span></td>
-            <td>Igor</td>
-            <td>64,00</td>
-            <td>
-              <div class="table-actions">
-                <button class="edit" type="button"><i class="bi bi-pencil-square"></i></button>
-                <button class="delete" type="button"><i class="bi bi-trash"></i></button>
-              </div>
-            </td>
-          </tr>
-          <!-- Copie essas linhas quantas vezes precisar -->
-        </tbody>
       </table>
 
       <div class="pagination">
@@ -122,7 +90,7 @@
     
     
   </main>
-<script src="script.js"></script>
+<script type="module" src="importData.js"></script>
 </body>
 
 </html>

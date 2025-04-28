@@ -6,7 +6,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="main.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 </head>
 
@@ -59,11 +58,11 @@
         <span class="close" onclick="fecharModal()">&times;</span>
         <h2>Adicionar Transação</h2>
         <form id="form-transacao">
-          <div>          
+          <div>
             <!-- Tipo de Lançamento -->
             <div class="radio-input">
               <label class="label">
-                <input type="radio" name="tipo" value="receita" onclick="mostrarCampos('receita')" checked/>
+                <input type="radio" name="tipo" value="receita" onclick="mostrarCampos('receita')" checked />
                 <span class="text">Receita</span>
               </label>
               <label class="label">
@@ -71,28 +70,25 @@
                 <span class="text">Despesa</span>
               </label>
             </div>
-          
+
             <!-- Campos comuns -->
             <div id="campos-comuns">
-              
-              
-              <label>Categoria</label><br>
-              <input type="text" name="categoria"><br><br>
-              
-              <label>Valor (R$):</label><br>
-              <input type="number" name="valor" step="0.01"><br><br>
-              
-              <div class="flatpickr-wrapper" data-input data-toggle>
-                <input type="text" id="date-transaction" />
-                <button type="button" class="calendar-btn">📅</button>
+
+
+              <input type="text" name="categoria" placeholder="Categoria"><br><br>
+
+              <input type="number" name="valor" step="0.01" placeholder="Valor (R$)"><br><br>
+
+              <div>
+                <input type="text" id="datepicker" autocomplete="off" placeholder="Data">
               </div>
-              
+
             </div>
-            
+
             <!-- Somente para Receita -->
             <div id="campos-receita">
-              <label>Forma de Recebimento:</label><br>
               <select name="forma_recebimento">
+                <option value="" selected disabled>Forma de Recebimento</option>
                 <option value="dinheiro">Dinheiro</option>
                 <option value="pix">PIX</option>
                 <option value="transferencia">Transferência</option>
@@ -100,11 +96,11 @@
                 <option value="outro">Outro</option>
               </select><br><br>
             </div>
-          
+
             <!-- Somente para Despesa -->
             <div id="campos-despesa" style="display: none;">
-              <label>Forma de Pagamento:</label><br>
-              <select name="forma_pagamento" >
+              <select name="forma_pagamento" class="select-pagamento">
+                <option value="" selected disabled>Forma de Pagamento</option>
                 <option value="dinheiro">Dinheiro</option>
                 <option value="pix">PIX</option>
                 <option value="boleto">Boleto</option>
@@ -112,36 +108,51 @@
                 <option value="cartao_debito">Cartão de Débito</option>
                 <option value="transferencia">Transferência</option>
                 <option value="outro">Outro</option>
-              </select><br><br>
-              
-              <label>Forma de Lançamento:</label><br>
-              <input type="radio" name="forma" value="unico"> Único<br>
-              <input type="radio" name="forma" value="parcelado"> Parcelado - 
-              <input type="number" name="parcelas" placeholder="Qtd. parcelas" min="1"><br>
-              <input type="radio" name="forma" value="recorrente"> Recorrente (mensal, semanal, etc.)<br><br>
+              </select>
+
+              <div class="radio-pagament">
+                <label class="radio-btn">
+                  <input type="radio" name="forma" value="unico">
+                  <span>Único</span>
+                </label>
+
+                <label class="radio-btn">
+                  <input type="radio" name="forma" value="recorrente">
+                  <span>Recorrente</span>
+                </label>
+
+                <div>
+                  <label class="radio-btn">
+                    <input type="radio" name="parcelas" value="parcelas" onclick="toggleDropdownRadio()">
+                    <span>Parcelamento</span>
+                  </label>
+  
+                  <div class="dropdown-radio" id="dropdown-radio">
+                    <a href="#">1x</a><a href="#">2x</a><a href="#">3x</a><a href="#">4x</a><a href="#">5x</a><a
+                      href="#">6x</a><a href="#">7x</a><a href="#">8x</a><a href="#">9x</a><a href="#">10x</a><a
+                      href="#">11x</a><a href="#">12x</a><a href="#">Outro</a>
+                  </div>
+                  <input type="text" placeholder="Outro" style="display: none;">
+                </div>
+
+              </div>
             </div>
-          
-            <!-- Status -->
-            <label>Status do Lançamento:</label>
-            <select name="status" >
-              <option value="previsto">Previsto</option>
-              <option value="realizado">Realizado</option>
-              <option value="atrasado">Atrasado</option>
-              <option value="cancelado">Cancelado</option>
-            </select>
+
+
             
+
+
             
-            <label>Observação</label>
-            <textarea name="descricao" rows="3" type="text"></textarea>
+            <textarea name="descricao" placeholder="Observações" rows="3" type="text"></textarea>
           </div>
-            <button type="submit">Salvar Lançamento</button>
-            
-          
-          
+          <button type="submit">Salvar Lançamento</button>
+
+
+
         </form>
       </div>
     </div>
-    
+
     <div class="table-container">
       <table>
         <thead>
@@ -197,19 +208,42 @@
         <a href="#">5</a>
       </div>
     </div>
-    
-    
-  </main>
-  <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
-<script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
 
+
+  </main>
+  <script src="./node_modules/pikaday/pikaday.js"></script>
+  <script src="./node_modules/moment/moment.js"></script>
   <script>
-    flatpickr("#date-transaction", {
-      dateFormat: "d/m/Y", // formato de data brasileiro
-      locale: "pt" // para português (requer carregar o locale também)
-    });
+    var picker = new Pikaday({
+  field: document.getElementById('datepicker'),
+  i18n: {
+    previousMonth : 'Mês anterior',
+    nextMonth     : 'Próximo mês',
+    months        : ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+    weekdays      : ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+    weekdaysShort : ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb']
+  },
+  firstDay: 1, // Domingo. Se quiser que a semana comece na segunda, use 1
+  format: 'D/M/YYYY',
+    toString(date, format) {
+        // you should do formatting based on the passed format,
+        // but we will just return 'D/M/YYYY' for simplicity
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    },
+    parse(dateString, format) {
+        // dateString is the result of `toString` method
+        const parts = dateString.split('/');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        return new Date(year, month, day);
+    }
+});
   </script>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

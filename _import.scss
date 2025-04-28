@@ -1,6 +1,14 @@
 .upload-container {
     width: 100%;
 
+    .spinner {
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   }
 
   .upload-container h2 {
@@ -25,6 +33,11 @@
     span {
         color: $ryda-text-muted;
         font-size: 32px;
+    }
+
+    input {
+      display: flex;
+      background-color: red;
     }
   }
 

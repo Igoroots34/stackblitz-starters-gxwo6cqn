@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @import 'colors';
+@import 'components';
 @import 'reset';
 @import 'transaction';
+@import 'pikaday-custom';
 @import 'budget';
 @import 'simulator';
 @import 'import';
-@import 'flatpickr';
 
 .parent {
   display: grid;
