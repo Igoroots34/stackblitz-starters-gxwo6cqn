@@ -74,3 +74,20 @@
       background-color: $ryda-primary-dark;
     }
   }
+
+  .edit {
+    border-radius: 60px;
+    padding: 8px;
+    border: none;
+    &:hover {
+        background: $ryda-primary-dark;
+        color: $ryda-primary-light;
+    }
+}
+
+.delete {
+    &:hover {
+        background: $ryda-error-dark;
+        color: $ryda-error-light;
+    }
+}

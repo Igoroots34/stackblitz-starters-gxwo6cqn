@@ -885,6 +885,21 @@ main .table-container table tbody tr:nth-child(even) {
   background-color: #b3811b;
 }
 
+.edit {
+  border-radius: 60px;
+  padding: 8px;
+  border: none;
+}
+.edit:hover {
+  background: #b3811b;
+  color: #f7f3ca;
+}
+
+.delete:hover {
+  background: #b00020;
+  color: #ff8a80;
+}
+
 .parent {
   display: grid;
   padding: 24px;

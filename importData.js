@@ -37,9 +37,12 @@ function displayCSV(csvText) {
     });
 
     // Cria uma célula extra para "Ação" se quiser
-    const actionCell = document.createElement('td');
-    actionCell.innerHTML = '<button>Editar</button>'; // Ou o que quiser
-    row.appendChild(actionCell);
+    const actionCellEdit = document.createElement('td');
+    const actionCellDelete = document.createElement('td');
+    actionCellEdit.innerHTML = '<button class="edit"><i class="bi bi-pencil"></i></button>'; // Ou o que quiser
+    actionCellDelete.innerHTML = '<button class="delete"><i class="bi bi-trash"></i></button>';
+    row.appendChild(actionCellEdit);
+row.appendChild(actionCellDelete);
 
     tbody.appendChild(row);
   });
